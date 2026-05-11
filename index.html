@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign TruckGuard LLC • El parcero del camionero latino</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+    .title-font { font-family: 'Space Grotesk', sans-serif; }
+    .hero-bg { position: relative; overflow: hidden; min-height: 85vh; }
+    .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    .gold { color: #D4A017; }
+    .glow-border {
+      position: relative;
+      border: 3px solid transparent;
+      background: linear-gradient(#0F2C22, #0F2C22) padding-box,
+                  linear-gradient(90deg, #D4A017, #fff, #D4A017) border-box;
+      animation: glow 4s linear infinite;
+    }
+    @keyframes glow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .coverage-card, .tech-card, .partner-card { transition: all 0.3s ease; }
+    .coverage-card:hover, .tech-card:hover, .partner-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(212 160 23 / 0.2); }
+  </style>
+</head>
+<body class="bg-[#0F2C22] text-white">
+
+  <!-- HEADER -->
+  <nav class="bg-black/95 backdrop-blur-lg border-b border-[#D4A017]/30 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-8 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="assets/logos/logo-sovereign-full.png" alt="Sovereign TruckGuard LLC" class="h-16">
+        <div class="flex flex-col leading-none">
+          <span class="title-font text-3xl font-bold gold">SOVEREIGN</span>
+          <span class="title-font text-2xl font-bold tracking-widest">TRUCKGUARD LLC</span>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-lg font-medium">
+        <a href="#" class="hover:text-[#D4A017]">HOME</a>
+        <a href="#seguros" class="hover:text-[#D4A017]">Seguros</a>
+        <a href="#" class="hover:text-[#D4A017]">8 Años de Experiencia</a>
+        <a href="#" class="hover:text-[#D4A017]">Tecnología Solyon</a>
+      </div>
+      <button onclick="openArcanumChat()" class="glow-border bg-[#D4A017] text-white px-8 py-3 rounded-2xl font-semibold flex items-center gap-2 hover:scale-105 transition">
+        <i class="fas fa-shield-alt"></i> Cotizar con Arcanum
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg py-20 min-h-screen flex items-center relative">
+    <video class="hero-video" autoplay loop muted playsinline>
+      <source src="assets/videos/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 px-6 py-3 rounded-3xl text-sm mb-6">
+          <i class="fas fa-truck text-[#D4A017]"></i>
+          8 AÑOS VIVIENDO LO MISMO QUE TÚ
+        </div>
+        <h1 class="title-font text-6xl md:text-7xl font-bold leading-none mb-6">
+          EL <span class="gold">PARCERO</span><br>
+          DEL CAMIONERO<br>LATINO
+        </h1>
+        <p class="text-3xl md:text-4xl leading-tight font-semibold text-white mb-8">
+          Plataforma digital IA que asegura,<br>certifica y rescata camioneros latinos en EE.UU.
+        </p>
+        <button onclick="openArcanumChat()" class="glow-border bg-[#D4A017] text-white px-10 py-5 rounded-3xl font-semibold text-2xl flex items-center gap-3 hover:scale-105 transition">
+          COTIZAR <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#0F2C22]">
+     <div class="bg-[#0F2C22] text-white p-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">🦅</span>
+         <div>
+         <h3 class="font-bold text-xl">Arcanum IA</h3>
+         <p class="text-[#D4A017] text-sm">Cerebro de Solyon • Especialista en camioneros latinos</p>
+         </div>
+     </div>
+      <button onclick="closeArcanumChat()" class="text-3xl text-white/70 hover:text-white">×</button>
+    </div>
+  
+  <div id="chatBody" class="h-80 p-6 overflow-y-auto space-y-6 text-lg bg-white text-black"></div>
+  
+  <div class="p-4 border-t bg-zinc-100 flex gap-2">
+    <input id="chatInput" type="text" placeholder="Escribe aquí..." 
+           class="flex-1 bg-white border border-gray-300 rounded-2xl px-6 py-4 focus:outline-none text-black"
+           onkeypress="if(event.key==='Enter') sendMessage()">
+    <button onclick="sendMessage()" 
+            class="bg-[#D4A017] hover:bg-[#c18f00] text-black px-8 rounded-2xl font-semibold">Enviar</button>
+  </div>
+</div>
+  </section>
+
+  <!-- SECCIÓN 1: BENEFICIOS -->
+  <section class="py-20 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-4">Aquí no te venden un seguro...</h2>
+        <p class="text-3xl text-[#D4A017]">te cuidan como a un parcero de verdad</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#0F2C22] p-8 rounded-3xl border border-[#D4A017]/30">
+          <i class="fas fa-file-pdf text-5xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Certificados y PDFs automáticos</h3>
+          <p class="text-zinc-400">En segundos tienes todo listo. Sin esperar, sin trámites eternos.</p>
+        </div>
+        <div class="bg-[#0F2C22] p-8 rounded-3xl border border-[#D4A017]/30">
+          <i class="fas fa-hand-holding-dollar text-5xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Transparente y sin sobrecostos</h3>
+          <p class="text-zinc-400">Lo que te cotizamos es lo que pagas. Nada de sorpresas ni letras pequeñas.</p>
+        </div>
+        <div class="bg-[#0F2C22] p-8 rounded-3xl border border-[#D4A017]/30">
+          <i class="fas fa-heart text-5xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">100% en español y con corazón camionero</h3>
+          <p class="text-zinc-400">Asesoría gratuita constante. Estamos construyendo un ecosistema tecnológico y humano alrededor de ti y tu familia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: EXPERIENCIA Y FUNDADORES -->
+  <section class="py-20 bg-[#0F2C22]">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">Experiencia, Conocimiento y Corazón Camionero</h2>
+        <p class="text-3xl text-[#D4A017]">8 años viviendo la misma lucha que tú en la carretera</p>
+      </div>
+      <div class="max-w-4xl mx-auto text-xl text-zinc-300 leading-relaxed text-center mb-16">
+        Durante 8 años hemos visto cómo cientos de camioneros latinos pierden sus sueños, sus camiones y la tranquilidad de su familia por seguros caros, multas inesperadas, brokers que no entienden español y un sistema que parece estar en contra de nosotros.<br><br>
+        <span class="text-white font-semibold">Sabemos lo que se siente.</span><br><br>
+        Por eso no somos solo otra aseguradora. Creamos un ecosistema tecnológico y humano completo alrededor del owner-operator latino.<br><br>
+        <span class="text-[#D4A017] font-bold">Somos el guardian soberano que cuida al latino como a un parcero de verdad.</span>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-black p-8 rounded-3xl border border-[#D4A017]/30 flex gap-6 items-start">
+          <img src="assets/images/sergio-foto.jpg" alt="Sergio Murillo" class="w-24 h-24 rounded-2xl object-cover flex-shrink-0">
+          <div>
+            <h3 class="text-2xl font-semibold">Sergio Murillo</h3>
+            <p class="text-[#D4A017] mb-2">Fundador &amp; CEO</p>
+            <p class="text-zinc-400">8 años en el trucking. Empresario que decidió cambiar las reglas para que ningún latino más pierda su sueño por falta de apoyo real.</p>
+          </div>
+        </div>
+        <div class="bg-black p-8 rounded-3xl border border-[#D4A017]/30 flex gap-6 items-start">
+          <img src="assets/images/elizabeth-foto.jpeg" alt="Elizabeth Tamayo" class="w-24 h-24 rounded-2xl object-cover flex-shrink-0">
+          <div>
+            <h3 class="text-2xl font-semibold">Elizabeth Tamayo</h3>
+            <p class="text-[#D4A017] mb-2">Fundadora &amp; COO</p>
+            <p class="text-zinc-400">Líder operativa y corazón del equipo. Se encarga de que cada camionero latino sea tratado con respeto, transparencia y el apoyo que se merece.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TECNOLOGÍA SOLYON -->
+  <section class="relative py-20 overflow-hidden bg-black min-h-screen flex items-center">
+    <video class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-0" 
+           autoplay loop muted playsinline preload="auto">
+      <source src="assets/videos/solyon-lab-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">Tecnología Solyon</h2>
+        <p class="text-3xl text-[#D4A017]">El cerebro que protege y hace crecer tu negocio</p>
+      </div>
+      <div class="max-w-3xl mx-auto text-center text-xl text-zinc-300 mb-16">
+        Desarrollamos tecnología propia en nuestro laboratorio de Medellín (Solyon Technologies S.A.S.), apoyado por Ruta N, el Distrito de Ciencia y Tecnología de Medellín, Toyota Mobility Foundation y reconocido por el Ministerio de Ciencias de Colombia.<br><br>
+        <span class="text-white">Arcanum IA + Nexus + herramientas exclusivas para el camionero latino.</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
+          <i class="fas fa-brain text-6xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Arcanum IA</h3>
+          <p class="text-zinc-400">Cerebro central que cotiza, certifica y rescata en tiempo real.</p>
+        </div>
+        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
+          <i class="fas fa-network-wired text-6xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Nexus Orchestration</h3>
+          <p class="text-zinc-400">Conecta seguros, factoring, ELD, cargas y compliance en un solo ecosistema.</p>
+        </div>
+        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
+          <i class="fas fa-rocket text-6xl text-[#D4A017] mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-3">Licenciamiento B2B</h3>
+          <p class="text-zinc-400">Nuestra tecnología también está disponible para otras empresas del sector.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: COBERTURAS (6 tarjetas completas) -->
+  <section id="seguros" class="py-20 bg-[#0F2C22]">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-12">
+        <h2 class="title-font text-5xl font-bold mb-3">Aseguranza para tus camiones</h2>
+        <p class="text-3xl text-[#D4A017]">Coberturas reales que protegen tu negocio y tu familia</p>
+      </div>
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/1015/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">VEHÍCULO</span>
+            <h3 class="text-xl font-semibold mb-2">Physical Damage</h3>
+            <p class="text-zinc-400 text-sm">Cubre daños físicos a tu camión por colisiones, vandalismo, robo o eventos naturales.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/201/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">CARGA</span>
+            <h3 class="text-xl font-semibold mb-2">Motor Truck Cargo</h3>
+            <p class="text-zinc-400 text-sm">Protección para la mercancía que transportas contra pérdida, daño o robo.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/301/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">TRAILER</span>
+            <h3 class="text-xl font-semibold mb-2">Trailer Interchange</h3>
+            <p class="text-zinc-400 text-sm">Protección para remolques que no te pertenecen pero están bajo tu cuidado.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/401/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">RESPONSABILIDAD</span>
+            <h3 class="text-xl font-semibold mb-2">General Liability</h3>
+            <p class="text-zinc-400 text-sm">Protege tu empresa ante reclamos por daños a terceros o lesiones.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/501/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">BOBTAIL</span>
+            <h3 class="text-xl font-semibold mb-2">Non-Trucking Liability</h3>
+            <p class="text-zinc-400 text-sm">Cobertura cuando manejas tu camión fuera del despacho, sin carga ni asignación activa.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-40 bg-[url('https://picsum.photos/id/601/600/400')] bg-cover bg-center"></div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">CONDUCTOR</span>
+            <h3 class="text-xl font-semibold mb-2">Workers’ Compensation</h3>
+            <p class="text-zinc-400 text-sm">Protección para ti y tu conductor en caso de lesiones laborales.</p>
+            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button onclick="openArcanumChat()" class="glow-border bg-[#D4A017] text-white px-16 py-8 rounded-3xl font-bold text-4xl md:text-5xl flex items-center gap-4 mx-auto hover:scale-105 transition">
+          COTIZAR <i class="fas fa-arrow-right text-5xl"></i>
+        </button>
+        <p class="text-[#D4A017] mt-6 text-xl">Haz clic y Arcanum te dará la mejor cotización en segundos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: LO QUE DICEN LOS PARCEROS -->
+  <section class="py-20 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">Lo que dicen los parceros</h2>
+        <p class="text-3xl text-[#D4A017]">Palabras reales de camioneros latinos que ya están protegidos</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div class="bg-[#0F2C22] rounded-3xl p-8 border border-[#D4A017]/30">
+          <img src="assets/images/luciel-chat.png" alt="Testimonio Luciel" class="w-full rounded-2xl mb-6 shadow-xl">
+          <p class="text-zinc-300 text-lg italic">"Llevo 3 años con Sovereign y por fin siento que tengo un parcero de verdad. Nadie me había explicado las cosas tan claras."</p>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-[#D4A017] rounded-2xl flex items-center justify-center text-2xl">🧔</div>
+            <div>
+              <p class="font-semibold">Luciel Torres</p>
+              <p class="text-[#D4A017] text-sm">Texas • 3 años con nosotros</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#0F2C22] rounded-3xl p-8 border border-[#D4A017]/30">
+          <img src="assets/images/raidel-chat.png" alt="Testimonio Raidel" class="w-full rounded-2xl mb-6 shadow-xl">
+          <p class="text-zinc-300 text-lg italic">"Gracias parcero, por la atención y la claridad. Me siento más seguro desde el primer día."</p>
+          <div class="mt-8 flex items-center gap-4">
+            <div class="w-12 h-12 bg-[#D4A017] rounded-2xl flex items-center justify-center text-2xl">🧔</div>
+            <div>
+              <p class="font-semibold">Raidel</p>
+              <p class="text-[#D4A017] text-sm">Nuevo cliente • Texas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: ALIADOS Y SERVICIOS -->
+  <section class="py-20 bg-[#0F2C22]">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">Aliados y Servicios</h2>
+        <p class="text-3xl text-[#D4A017]">Todo lo que necesitas para operar con éxito</p>
+      </div>
+      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">📄</div>
+          <h3 class="text-xl font-semibold mb-1">Factoring</h3>
+          <p class="text-[#D4A017] text-sm font-medium">RTS Financial</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">⛽</div>
+          <h3 class="text-xl font-semibold mb-1">Fuel Card</h3>
+          <p class="text-[#D4A017] text-sm font-medium">RTS Financial</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">📱</div>
+          <h3 class="text-xl font-semibold mb-1">Libro Electrónico (ELD)</h3>
+          <p class="text-[#D4A017] text-sm font-medium">Motive</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">🚛</div>
+          <h3 class="text-xl font-semibold mb-1">Compra y Venta de Equipo</h3>
+          <p class="text-[#D4A017] text-sm font-medium">TTT.com</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">🛡️</div>
+          <h3 class="text-xl font-semibold mb-1">Seguros Comerciales</h3>
+          <p class="text-[#D4A017] text-sm font-medium">Venus Insurance Group</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+        <a href="#" class="partner-card block bg-black rounded-3xl p-8 text-center border border-[#D4A017]/30 hover:border-[#D4A017]">
+          <div class="h-20 flex items-center justify-center text-5xl mb-4">📋</div>
+          <h3 class="text-xl font-semibold mb-1">Permisos Regulatorios</h3>
+          <p class="text-[#D4A017] text-sm font-medium">Estructura Financiera y de Negocio</p>
+          <span class="text-[#D4A017] text-sm mt-6 inline-flex items-center gap-1">Ver más →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: TECNOLOGÍA PARA TU RUTA -->
+  <section class="py-20 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">Tecnología para tu Ruta</h2>
+        <p class="text-3xl text-[#D4A017]">Apps hechas por camioneros para camioneros</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div class="tech-card bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30">
+          <img src="assets/images/prueba truckboss showroom 3D.png" alt="TruckBoss" class="w-full">
+          <div class="p-8">
+            <h3 class="text-3xl font-bold text-[#D4A017] mb-2">TruckBoss</h3>
+            <p class="text-zinc-300 text-lg">No solo manejas tu póliza y sacas certificados automáticos. Tienes inventario en tiempo real, compras tu truck, lo financias y lo aseguras todo en un solo lugar.</p>
+            <div class="mt-8 flex items-center justify-between">
+              <span class="text-sm text-[#D4A017] font-medium">Disponible en Google Play muy pronto</span>
+              <a href="#" class="text-[#D4A017] hover:underline">Ver más →</a>
+            </div>
+          </div>
+        </div>
+        <div class="tech-card bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30">
+          <img src="assets/images/ChatGPT Image 22 nov 2025, 02_59_23 a.m..png" alt="EL-VIA" class="w-full">
+          <div class="p-8">
+            <h3 class="text-3xl font-bold text-[#D4A017] mb-2">EL-VIA</h3>
+            <p class="text-zinc-300 text-lg">La app que te enseña inglés aplicado a la inspección DOT mientras manejas. Roleplays con inspector, pronunciación evaluada y certificación final.</p>
+            <div class="mt-6 text-[#D4A017] font-medium">$19.99 / mes</div>
+            <div class="mt-8 flex items-center justify-between">
+              <span class="text-sm text-[#D4A017] font-medium">Disponible en Google Play muy pronto</span>
+              <a href="#" class="text-[#D4A017] hover:underline">Ver más →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section class="py-20 bg-black">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="title-font text-5xl font-bold mb-3">El Podcast del Parcero</h2>
+        <p class="text-3xl text-[#D4A017]">Historias reales, consejos prácticos y la voz del camionero latino</p>
+        <p class="text-[#D4A017] mt-3 flex items-center justify-center gap-2">
+          <i class="fab fa-youtube text-4xl"></i> Disponible solo en YouTube
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="tech-card bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 p-6 flex flex-col">
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-4 py-1 bg-red-600 text-white text-xs font-bold rounded-full">EPISODIO 01</span>
+              <span class="text-zinc-400 text-sm">38 min</span>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Cómo bajar tu prima de seguro sin perder cobertura</h3>
+            <p class="text-zinc-400">Conversación con Luciel Torres (Texas) – 3 años con Sovereign TruckGuard</p>
+          </div>
+          <a href="#" target="_blank" class="mt-8 flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 rounded-2xl transition">
+            <i class="fab fa-youtube text-2xl"></i> VER EN YOUTUBE
+          </a>
+        </div>
+        <!-- Puedes agregar los otros episodios aquí si quieres -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-16 border-t border-[#D4A017]/30">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 gap-12 items-start">
+        <div>
+          <h4 class="text-[#D4A017] text-xl font-semibold mb-6">OFICINAS</h4>
+          <div class="space-y-6 text-zinc-400">
+            <div>
+              <p class="font-medium">Sheridan, Wyoming</p>
+              <p>30 N Gould St STE N<br>Sheridan, WY 82801</p>
+            </div>
+            <div>
+              <p class="font-medium">Irving, Texas</p>
+              <p>9901 Valley Ranch Pkwy E, Suite 2039<br>Irving, TX 75063</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-[#D4A017] text-xl font-semibold mb-6">CONTACTO</h4>
+          <div class="space-y-6 text-zinc-400">
+            <div>
+              <p class="font-medium">E-mail</p>
+              <a href="mailto:info@sovereigntruckguard.com" class="hover:text-white">info@sovereigntruckguard.com</a>
+            </div>
+            <div>
+              <p class="font-medium">Teléfono</p>
+              <a href="tel:9452158059" class="hover:text-white">+1 (945) 215-8059</a>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <img src="assets/logos/logo-sovereign-full.png" alt="Sovereign TruckGuard LLC" class="h-60 opacity-90">
+        </div>
+      </div>
+
+      <div class="mt-16 max-w-4xl mx-auto text-center text-xs text-zinc-500 leading-relaxed border-t border-[#D4A017]/20 pt-12">
+        By sharing my personal information, I, the undersigned, hereby grant explicit consent to <strong>Sovereign TruckGuard LLC</strong> to initiate contact with me via telephone, electronic mail, SMS text messages, social media platforms, and any other applicable communication channels, as required for the efficient administration and management of my insurance policy. I recognize and affirm that these communications are vital to ensure that the services provided by <strong>Sovereign TruckGuard LLC</strong> are executed with the necessary diligence and promptness to meet my needs effectively. <strong>Sovereign TruckGuard LLC</strong> is committed to safeguarding my personal data with advanced security measures, maintaining privacy and preventing unauthorized access. I retain the option to modify my communication preferences or withdraw my consent at any time by notifying Sovereign TruckGuard LLC through designated channels. Furthermore, Sovereign TruckGuard LLC assures that my personal information will only be shared with third parties when essential for service provision or as mandated by legal requirements, and always with my explicit consent.
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-[#D4A017]/20 flex flex-wrap justify-between items-center text-xs text-zinc-500">
+        <p>© 2026 Sovereign TruckGuard LLC. All Rights Reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white">Política de Privacidad</a>
+          <a href="#" class="hover:text-white">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  let step = 0;
+  let data = {
+    nombreCompleto: "", telefono: "", email: "",
+    eresDriver: "", fechaNacimiento: "", licenciaNumero: "", licenciaTipo: "",
+    anoPrimeraLicencia: "", estadoBase: "", usdot: "", tieneYarda: "", direccionYarda: "",
+    operaInterstate: "", cantidadCamiones: "", vinCamiones: [],
+    tieneTrailers: "", cantidadTrailers: "", vinTrailers: [],
+    tieneDrivers: "", liability: "", liabilityLimite: "",
+    cargo: "", cargoLimite: "", otraCobertura: ""
+  };
+
+  let currentTruck = 0;
+  let currentTrailer = 0;
+
+  function openArcanumChat() {
+    const chatBody = document.getElementById("chatBody");
+    chatBody.innerHTML = `
+      <div class="bg-[#0F2C22] text-white p-5 rounded-3xl">
+        ¡Hola parcero! Soy Arcanum IA de Sovereign TruckGuard.<br>
+        Vamos a hacer una cotización completa y precisa de tu seguro comercial.<br><br>
+        ¿Cuál es tu nombre completo?
+      </div>`;
+    step = 1;
+    setTimeout(() => document.getElementById("chatInput").focus(), 100);
+  }
+
+  function sendMessage() {
+    const input = document.getElementById("chatInput");
+    const chatBody = document.getElementById("chatBody");
+    const mensaje = input.value.trim();
+    if (!mensaje) return;
+
+    chatBody.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-[#D4A017] text-black px-5 py-3 rounded-3xl max-w-[75%]">${mensaje}</div></div>`;
+    input.value = "";
+
+    if (step === 1) { data.nombreCompleto = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">Gracias ${data.nombreCompleto.split(" ")[0]}! ¿Cuál es tu número de teléfono o WhatsApp?</div>`; step = 2; }
+    else if (step === 2) { data.telefono = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es tu correo electrónico?</div>`; step = 3; }
+    else if (step === 3) { data.email = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Eres tú el driver principal en la póliza o vas a incluir a otros conductores?</div>`; step = 4; }
+    else if (step === 4) { data.eresDriver = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es tu fecha de nacimiento? (DD/MM/AAAA)</div>`; step = 5; }
+    else if (step === 5) { data.fechaNacimiento = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es tu número de licencia?</div>`; step = 6; }
+    else if (step === 6) { data.licenciaNumero = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es el tipo de tu licencia? (Personal o Commercial)</div>`; step = 7; }
+    else if (step === 7) { data.licenciaTipo = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿En qué año sacaste tu primera licencia?</div>`; step = 8; }
+    else if (step === 8) { data.anoPrimeraLicencia = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿En qué estado está tu base o sacaste la licencia? (Estado base)</div>`; step = 9; }
+    else if (step === 9) { data.estadoBase = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es tu número de US DOT?</div>`; step = 10; }
+    else if (step === 10) { data.usdot = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Tienes yarda de parqueo? Si sí, dame la dirección completa.</div>`; step = 11; }
+    else if (step === 11) { data.tieneYarda = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Operas interstate o intrastate?</div>`; step = 12; }
+    else if (step === 12) { data.operaInterstate = mensaje; chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuántos camiones tienes?</div>`; step = 13; }
+    else if (step === 13) {
+      data.cantidadCamiones = parseInt(mensaje) || 1;
+      currentTruck = 1;
+      chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es el VIN del camión ${currentTruck}?</div>`;
+      step = 14;
+    }
+    else if (step === 14) {
+      data.vinCamiones.push(mensaje);
+      if (currentTruck < data.cantidadCamiones) {
+        currentTruck++;
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es el VIN del camión ${currentTruck}?</div>`;
+      } else {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Tienes trailers? (sí o no)</div>`;
+        step = 15;
+      }
+    }
+    else if (step === 15) {
+      data.tieneTrailers = mensaje.toLowerCase().includes("si") ? "Sí" : "No";
+      if (data.tieneTrailers === "Sí") {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuántos trailers tienes?</div>`;
+        step = 16;
+      } else {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas Auto Commercial Liability? (sí o no)</div>`;
+        step = 19;
+      }
+    }
+    else if (step === 16) {
+      data.cantidadTrailers = parseInt(mensaje) || 0;
+      currentTrailer = 1;
+      chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es el VIN del trailer ${currentTrailer}?</div>`;
+      step = 17;
+    }
+    else if (step === 17) {
+      data.vinTrailers.push(mensaje);
+      if (currentTrailer < data.cantidadTrailers) {
+        currentTrailer++;
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Cuál es el VIN del trailer ${currentTrailer}?</div>`;
+      } else {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas Auto Commercial Liability? (sí o no)</div>`;
+        step = 19;
+      }
+    }
+    else if (step === 19) {
+      data.liability = mensaje.toLowerCase().includes("si") ? "Sí" : "No";
+      if (data.liability === "Sí") {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Qué límite necesitas? ($1,000,000 / $750,000 / $500,000)</div>`;
+        step = 20;
+      } else {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas Motor Truck Cargo? (sí o no)</div>`;
+        step = 21;
+      }
+    }
+    else if (step === 20) {
+      data.liabilityLimite = mensaje;
+      chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas Motor Truck Cargo? (sí o no)</div>`;
+      step = 21;
+    }
+    else if (step === 21) {
+      data.cargo = mensaje.toLowerCase().includes("si") ? "Sí" : "No";
+      if (data.cargo === "Sí") {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Qué límite necesitas? ($50,000 / $100,000 / $250,000)?</div>`;
+        step = 22;
+      } else {
+        chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas alguna otra cobertura? Menciónala.</div>`;
+        step = 23;
+      }
+    }
+    else if (step === 22) {
+      data.cargoLimite = mensaje;
+      chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¿Necesitas alguna otra cobertura? Menciónala.</div>`;
+      step = 23;
+    }
+    else if (step === 23) {
+      data.otraCobertura = mensaje;
+      enviarALeadSheet();
+      chatBody.innerHTML += `<div class="bg-[#0F2C22] text-white p-5 rounded-3xl">¡Listo parcero! Ya tengo toda la información.<br><br>Un agente de Sovereign TruckGuard te contactará muy pronto con tu cotización personalizada.<br><br>Gracias por confiar en tu parcero. 🦅</div>`;
+      step = 0;
+    }
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  function enviarALeadSheet() {
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxuKgz0cNGh_jMncD-v3l3w6PRiy3zcL0FeEZ_yNAikPxV3j3MYUHFFotRUzpRmEKzo/exec";
+
+    const payload = {
+      nombreCompleto: data.nombreCompleto,
+      telefono: data.telefono,
+      email: data.email,
+      eresDriver: data.eresDriver,
+      fechaNacimiento: data.fechaNacimiento,
+      licenciaNumero: data.licenciaNumero,
+      licenciaTipo: data.licenciaTipo,
+      anoPrimeraLicencia: data.anoPrimeraLicencia,
+      estadoBase: data.estadoBase,
+      usdot: data.usdot,
+      tieneYarda: data.tieneYarda,
+      direccionYarda: data.direccionYarda,
+      operaInterstate: data.operaInterstate,
+      cantidadCamiones: data.cantidadCamiones,
+      vinCamiones: data.vinCamiones.join(" | "),
+      tieneTrailers: data.tieneTrailers,
+      cantidadTrailers: data.cantidadTrailers,
+      vinTrailers: data.vinTrailers.join(" | "),
+      tieneDrivers: data.tieneDrivers,
+      liability: data.liability,
+      liabilityLimite: data.liabilityLimite,
+      cargo: data.cargo,
+      cargoLimite: data.cargoLimite,
+      otraCobertura: data.otraCobertura,
+      fecha: new Date().toLocaleString("es-ES")
+    };
+
+    fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(() => console.log("✅ Lead enviado correctamente a Google Sheets"))
+      .catch(err => console.error("Error enviando lead", err));
+  }
+
+  function closeArcanumChat() {
+    console.log("Chat cerrado");
+  }
+
+  window.addEventListener('load', openArcanumChat);
+</script>
+</body>
+</html>
