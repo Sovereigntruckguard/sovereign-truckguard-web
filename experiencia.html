@@ -11,7 +11,6 @@
     .title-font { font-family: 'Space Grotesk', sans-serif; }
     .gold { color: #D4A017; }
 
-    /* GLOWBLOW EFFECT */
     .glow-border {
       position: relative;
       border: 3px solid transparent;
@@ -37,7 +36,7 @@
 </head>
 <body class="bg-[#0F2C22] text-white">
 
-  <!-- HEADER (exacto igual al home) -->
+  <!-- HEADER -->
   <header class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-[#D4A017]/20">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
       <div class="flex items-center gap-4">
@@ -81,7 +80,6 @@
   <!-- FUNDADORES + TIMELINE -->
   <section class="max-w-screen-2xl mx-auto px-8 py-16">
     <div class="grid md:grid-cols-12 gap-12">
-
       <!-- Sergio -->
       <div class="md:col-span-4 bg-[#111] rounded-3xl p-8 text-center">
         <img src="assets/images/sergio-foto.jpg" alt="Sergio Murillo" class="w-56 h-56 mx-auto rounded-2xl mb-6 object-cover border-4 border-[#D4A017]">
@@ -122,19 +120,21 @@
     </div>
   </section>
 
-  <!-- CTA MENTORÍAS -->
+  <!-- CTA MENTORÍAS (ENLACE A GOOGLE CALENDAR) -->
   <section class="py-24 bg-gradient-to-r from-[#0F2C22] to-black text-center">
     <div class="max-w-2xl mx-auto px-8">
       <h2 class="text-5xl title-font mb-6">¿Quieres que tu negocio también tenga 8 años de ejecución brutal?</h2>
       <p class="text-2xl text-zinc-400 mb-10">Ofrecemos mentorías de arquitectura de negocios, construcción de departamentos y procesos de alto control de calidad.</p>
-      <a href="index.html" onclick="openArcanumChat()" 
+      
+      <!-- Aquí va tu enlace de Google Calendar -->
+      <a href="https://calendar.google.com/calendar/embed?src=sergio%40solyontechnologies.com&ctz=America%2FBogota" target="_blank"
          class="glow-border inline-flex items-center gap-4 text-white text-3xl font-bold px-16 py-8 rounded-3xl transition">
         Reservar mentoría ahora <span class="text-4xl">→</span>
       </a>
     </div>
   </section>
 
-  <!-- FOOTER DEL HOME (igual en todas las páginas) -->
+  <!-- FOOTER -->
   <footer class="bg-black py-16 text-zinc-400">
     <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-3 gap-12">
       <div>
