@@ -6,6 +6,18 @@
     <title>Tecnología Solyon | Sovereign Truckguard LLC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .card-coverage {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-coverage:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 
+                0 0 20px #facc15,
+                0 0 40px #facc15,
+                0 25px 50px -12px rgb(250 204 21);
+        }
+    </style>
 </head>
 <body class="bg-[#0a1f0a] text-white">
 
@@ -31,28 +43,33 @@
         </div>
     </header>
 
-    <!-- TECNOLOGÍA CON TUS IMÁGENES REALES -->
+    <!-- TECNOLOGÍA CON IMÁGENES REALES + BLOW-GLOW -->
     <section class="py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
-            <!-- TruckBoss -->
-            <div class="bg-black border border-yellow-400/30 rounded-3xl p-8">
-                <img src="assets/images/prueba truckboss s..." alt="TruckBoss" class="w-full rounded-2xl mb-6">
-                <h2 class="text-4xl font-bold text-yellow-400 mb-4">TruckBoss</h2>
-                <p class="text-xl text-gray-300 leading-relaxed">No solo manejas tu póliza y sacas certificados automáticos. Tienes inventario en tiempo real, compras tu truck, lo financias y lo aseguras todo en un solo lugar.</p>
-                <div class="mt-8 flex gap-4">
-                    <a href="#" class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-2xl hover:bg-yellow-300">Cotizar Seguro</a>
-                    <a href="#" class="border border-yellow-400 text-yellow-400 font-bold px-8 py-4 rounded-2xl hover:bg-yellow-400 hover:text-black">Financiar Ahora</a>
-                </div>
-                <p class="text-yellow-400 mt-8 text-sm">Disponible en Google Play muy pronto</p>
-            </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-center text-5xl font-bold text-yellow-400 mb-6">Tecnología Solyon</h1>
+            <p class="text-center text-2xl text-gray-300 max-w-4xl mx-auto mb-12">
+                Nuestro ecosistema tecnológico propio impulsado por <strong class="text-white">Arcanum</strong>
+            </p>
 
-            <!-- EL-VIA -->
-            <div class="bg-black border border-yellow-400/30 rounded-3xl p-8">
-                <img src="ChatGPT Image 22 nov 2025, 02_59_23 a.m..png" alt="EL-VIA" class="w-full rounded-2xl mb-6">
-                <h2 class="text-4xl font-bold text-yellow-400 mb-4">EL-VIA</h2>
-                <p class="text-xl text-gray-300 leading-relaxed">La app que te enseña inglés aplicado a la inspección DOT mientras manejas. Roleplays con inspector, pronunciación evaluada y certificación final.</p>
-                <div class="mt-8 bg-yellow-400 text-black font-bold px-6 py-2 inline-block rounded-2xl">$19.99 / mes</div>
-                <p class="text-yellow-400 mt-8 text-sm">Disponible en Google Play muy pronto</p>
+            <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
+                <div class="card-coverage min-w-[340px] bg-black border border-yellow-400/30 rounded-3xl p-8 snap-center">
+                    <img src="prueba truckboss showroom 3D.png" alt="TruckBoss" class="w-full rounded-2xl mb-6">
+                    <h2 class="text-4xl font-bold text-yellow-400 mb-4">TruckBoss</h2>
+                    <p class="text-xl text-gray-300 leading-relaxed">No solo manejas tu póliza. Tienes inventario en tiempo real, compras tu truck, lo financias y lo aseguras todo en un solo lugar.</p>
+                    <div class="mt-8 flex gap-4">
+                        <a href="#" class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-2xl hover:bg-yellow-300">Cotizar Seguro</a>
+                        <a href="#" class="border border-yellow-400 text-yellow-400 font-bold px-8 py-4 rounded-2xl hover:bg-yellow-400 hover:text-black">Financiar Ahora</a>
+                    </div>
+                    <p class="text-yellow-400 mt-8 text-sm">Disponible en Google Play muy pronto</p>
+                </div>
+
+                <div class="card-coverage min-w-[340px] bg-black border border-yellow-400/30 rounded-3xl p-8 snap-center">
+                    <img src="ChatGPT Image 22 nov 2025, 02_59_23 a.m..png" alt="EL-VIA" class="w-full rounded-2xl mb-6">
+                    <h2 class="text-4xl font-bold text-yellow-400 mb-4">EL-VIA</h2>
+                    <p class="text-xl text-gray-300 leading-relaxed">La app que te enseña inglés aplicado a la inspección DOT mientras manejas. Roleplays con inspector, pronunciación evaluada y certificación final.</p>
+                    <div class="mt-8 bg-yellow-400 text-black font-bold px-6 py-2 inline-block rounded-2xl">$19.99 / mes</div>
+                    <p class="text-yellow-400 mt-8 text-sm">Disponible en Google Play muy pronto</p>
+                </div>
             </div>
         </div>
     </section>
