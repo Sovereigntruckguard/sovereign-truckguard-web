@@ -10,15 +10,29 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
     .title-font { font-family: 'Space Grotesk', sans-serif; }
     .gold { color: #D4A017; }
+    
+    /* GLOWBLOW EFFECT */
+    .glow-border {
+      position: relative;
+      border: 3px solid transparent;
+      background: linear-gradient(#0F2C22, #0F2C22) padding-box,
+                  linear-gradient(90deg, #D4A017, #fff, #D4A017) border-box;
+      animation: glow 4s linear infinite;
+    }
+    @keyframes glow { 
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body class="bg-[#0F2C22] text-white">
 
-  <!-- HEADER (mismo que index) -->
+  <!-- HEADER EXACTO IGUAL AL HOME -->
   <header class="bg-black/90 backdrop-blur-md sticky top-0 z-50 border-b border-[#D4A017]/20">
     <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <img src="assets/logos/logo-sovereign-full.png" alt="Logo" class="h-12">
+        <img src="assets/logos/logo-sovereign-full.png" alt="Sovereign TruckGuard" class="h-12">
         <div>
           <div class="title-font text-3xl tracking-tighter gold">SOVEREIGN</div>
           <div class="text-sm tracking-[2px] -mt-1">TRUCKGUARD LLC</div>
@@ -30,7 +44,8 @@
         <a href="experiencia.html" class="text-[#D4A017] font-semibold">8 Años de Experiencia</a>
         <a href="tecnologia.html" class="hover:text-[#D4A017]">Tecnología Solyon</a>
       </nav>
-      <a href="index.html" onclick="openArcanumChat()" class="bg-[#D4A017] text-black px-8 py-3 rounded-2xl font-semibold flex items-center gap-2 hover:bg-white transition">
+      <a href="index.html" onclick="openArcanumChat()" 
+         class="glow-border px-8 py-3 rounded-2xl font-semibold flex items-center gap-2 text-black hover:text-white transition">
         <i class="fas fa-shield-alt"></i> Cotizar con Arcanum
       </a>
     </div>
@@ -38,82 +53,77 @@
 
   <!-- HERO -->
   <section class="py-24 bg-gradient-to-br from-[#0F2C22] to-black">
-    <div class="max-w-screen-2xl mx-auto px-8">
-      <div class="grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7">
-          <span class="inline-block bg-[#D4A017] text-black text-sm font-bold px-6 py-2 rounded-full mb-6">8 AÑOS EN LA CARRETERA</span>
-          <h1 class="title-font text-6xl md:text-7xl font-bold leading-none mb-8">
-            8 AÑOS<br>
-            <span class="gold">VIVIENDO LO MISMO QUE TÚ</span>
-          </h1>
-          <p class="text-2xl text-zinc-300 max-w-2xl">
-            No somos otra aseguradora más. Somos camioneros que decidimos cambiar las reglas del juego para que ningún latino más pierda su sueño en la carretera.
-          </p>
-        </div>
-        <div class="md:col-span-5">
-          <img src="assets/images/sergio-foto.jpg" alt="Sergio Murillo" class="rounded-3xl shadow-2xl border-4 border-[#D4A017]">
-        </div>
-      </div>
+    <div class="max-w-screen-2xl mx-auto px-8 text-center">
+      <h1 class="title-font text-6xl md:text-7xl font-bold leading-none mb-6">
+        8 AÑOS<br>
+        <span class="gold">DE EJECUCIÓN BRUTAL</span>
+      </h1>
+      <p class="text-2xl text-zinc-300 max-w-2xl mx-auto">De Medellín a Estados Unidos. De la calle a construir un ecosistema binacional que ya genera tracción en seguros y tecnología lista para lanzar.</p>
     </div>
   </section>
 
-  <!-- HISTORIA COMPLETA -->
+  <!-- FUNDADORES + TIMELINE -->
   <section class="max-w-screen-2xl mx-auto px-8 py-16">
-    <div class="max-w-4xl mx-auto prose prose-invert text-lg leading-relaxed">
-      <p>Desde 2018 hasta hoy hemos vivido en carne propia la misma lucha que tú: madrugadas buscando cargas, brokers que no contestan, seguros que no cubren, multas inesperadas y un sistema que parece estar en contra del camionero latino.</p>
-      
-      <p class="mt-8">Elizabeth ha estado a mi lado desde el primer día. En 2021 ella buscaba cargas desde las 4 a.m. mientras yo llamaba brokers. En 2023 la hice mi primera QC en YTS y se convirtió en la mejor underwriter que he conocido. Ella fue quien creó EL-VÍA, quien estructuró Solyon Move y quien ha estado creando Sovereign TruckGuard conmigo desde julio de 2025.</p>
+    <div class="grid md:grid-cols-12 gap-12">
 
-      <h2 class="title-font text-4xl gold mt-16 mb-8">Línea de tiempo – 8 años de ejecución brutal</h2>
-      <div class="space-y-12">
-        <div class="flex gap-8">
-          <div class="w-28 shrink-0 text-right font-bold text-[#D4A017]">2018-2020</div>
-          <div>Fino Services – Vendedor top, creador del primer departamento de Control de Calidad, dispatcher y vendedor de seguros comerciales.</div>
-        </div>
-        <div class="flex gap-8">
-          <div class="w-28 shrink-0 text-right font-bold text-[#D4A017]">2020-2021</div>
-          <div>AMC Agents – Fundé el departamento de Dispatch y Regulatorios desde cero. Estructuré todos los procesos DOT, MC, LLC, etc.</div>
-        </div>
-        <div class="flex gap-8">
-          <div class="w-28 shrink-0 text-right font-bold text-[#D4A017]">2021-2022</div>
-          <div>On Point Insurance Agents – Co-fundador con Elizabeth. Operación completa de dispatch y seguros.</div>
-        </div>
-        <div class="flex gap-8">
-          <div class="w-28 shrink-0 text-right font-bold text-[#D4A017]">2023-2025</div>
-          <div>Your Truck Shield – Fundé y lideré la compañía. Creé el posicionamiento, curso de licencia Florida y modelo de Auditor Personal.</div>
-        </div>
-        <div class="flex gap-8">
-          <div class="w-28 shrink-0 text-right font-bold text-[#D4A017]">Julio 2025 – Hoy</div>
-          <div>Reconstrucción Soberana. Después de perderlo todo, reconstruimos Sovereign TruckGuard + Solyon Technologies desde cero. Arcanum IA, Nexus, EL-VÍA, alianza con Venus Insurance Group y lanzamiento de Solyon Move.</div>
+      <!-- Sergio -->
+      <div class="md:col-span-4 bg-[#111] rounded-3xl p-8 text-center">
+        <img src="assets/images/sergio-foto.jpg" alt="Sergio Murillo" class="w-56 h-56 mx-auto rounded-2xl mb-6 object-cover border-4 border-[#D4A017]">
+        <h3 class="text-3xl font-bold">Sergio Murillo</h3>
+        <p class="text-[#D4A017] mb-6">Fundador &amp; CEO</p>
+        <div class="text-left space-y-4 text-sm">
+          <p><strong>Habilidades:</strong> Construcción de departamentos desde cero, procesos de alto control, arquitectura de negocios, ventas complejas.</p>
+          <p><strong>Valores:</strong> Ejecución sin excusas, disciplina, transparencia, lealtad.</p>
+          <p><strong>Roles:</strong> CEO, closer, formador, creador de sistemas.</p>
+          <p><strong>Puede enseñarte:</strong> Cómo estructurar un negocio de alto rendimiento, crear departamentos y procesos de control de calidad.</p>
         </div>
       </div>
 
-      <!-- Fundadores -->
-      <div class="grid md:grid-cols-2 gap-12 mt-20">
-        <div class="bg-[#111] rounded-3xl p-8 text-center">
-          <img src="assets/images/sergio-foto.jpg" alt="Sergio Murillo" class="w-48 h-48 mx-auto rounded-2xl mb-6 object-cover">
-          <h3 class="text-3xl font-bold">Sergio Murillo</h3>
-          <p class="text-[#D4A017]">Fundador &amp; CEO</p>
-          <p class="mt-6">8 años en el trucking. He sido vendedor, dispatcher, creador de departamentos y ahora CEO de Sovereign TruckGuard. Todo lo que sé lo aprendí en la carretera y en la lucha diaria.</p>
+      <!-- Línea de tiempo -->
+      <div class="md:col-span-4">
+        <h2 class="text-center title-font text-3xl mb-8 gold">LÍNEA DE TIEMPO – 8 AÑOS DE EJECUCIÓN BRUTAL</h2>
+        <div class="space-y-8 text-sm">
+          <div class="flex gap-4"><span class="font-bold w-20 shrink-0">2018-2020</span> Fino Services – Vendedor top y creador del primer departamento de Control de Calidad.</div>
+          <div class="flex gap-4"><span class="font-bold w-20 shrink-0">2020-2021</span> AMC Agents – Fundó el Departamento de Dispatch y Regulatorios desde cero.</div>
+          <div class="flex gap-4"><span class="font-bold w-20 shrink-0">2021-2023</span> On Point Insurance – Co-fundador con Elizabeth. Operación completa de dispatch.</div>
+          <div class="flex gap-4"><span class="font-bold w-20 shrink-0">2023-2025</span> Your Truck Shield – Founder &amp; CEO. Expansión a 15 estados y creación de procesos de alto nivel.</div>
+          <div class="flex gap-4"><span class="font-bold w-20 shrink-0">2025-Hoy</span> Reconstrucción Soberana – Creación de Sovereign TruckGuard LLC + Solyon Technologies. Alianza con Venus Insurance Group. Inicio de tracción en seguros.</div>
         </div>
-        <div class="bg-[#111] rounded-3xl p-8 text-center">
-          <img src="assets/images/elizabeth-foto.jpeg" alt="Elizabeth Tamayo" class="w-48 h-48 mx-auto rounded-2xl mb-6 object-cover">
-          <h3 class="text-3xl font-bold">Elizabeth Tamayo</h3>
-          <p class="text-[#D4A017]">Fundadora &amp; COO</p>
-          <p class="mt-6">Ha estado a mi lado desde el primer día. Buscaba cargas desde las 4 a.m., creó EL-VÍA, estructuró Solyon Move y es la que ha mantenido todo en pie durante la reconstrucción.</p>
+      </div>
+
+      <!-- Elizabeth -->
+      <div class="md:col-span-4 bg-[#111] rounded-3xl p-8 text-center">
+        <img src="assets/images/elizabeth-foto.jpeg" alt="Elizabeth Tamayo" class="w-56 h-56 mx-auto rounded-2xl mb-6 object-cover border-4 border-[#D4A017]">
+        <h3 class="text-3xl font-bold">Elizabeth Tamayo</h3>
+        <p class="text-[#D4A017] mb-6">Fundadora &amp; COO</p>
+        <div class="text-left space-y-4 text-sm">
+          <p><strong>Habilidades:</strong> Underwriting, búsqueda de cargas, creación de herramientas tecnológicas (EL-VÍA, Solyon Move).</p>
+          <p><strong>Valores:</strong> Disciplina, atención al detalle, resiliencia, lealtad.</p>
+          <p><strong>Roles:</strong> COO, underwriter, operadora diaria.</p>
+          <p><strong>Puede enseñarte:</strong> Cómo operar un negocio de trucking con excelencia y estructurar procesos de calidad.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="py-20 bg-black text-center">
+  <!-- SOLYON MOVE -->
+  <section class="bg-black py-16 text-center">
+    <div class="max-w-3xl mx-auto px-8">
+      <h2 class="text-3xl title-font gold mb-4">Tecnología propia: Solyon Move</h2>
+      <p class="text-xl">Desarrollamos y patentamos provisionalmente en EE.UU. una solución de movilidad accesible para personas con discapacidad (Brazo Amigo). Tecnología creada en Medellín y lista para escalar junto a Sovereign TruckGuard.</p>
+    </div>
+  </section>
+
+  <!-- CTA MENTORÍAS -->
+  <section class="py-24 bg-gradient-to-r from-[#0F2C22] to-black text-center">
     <div class="max-w-2xl mx-auto px-8">
-      <h2 class="text-5xl title-font mb-8">¿Quieres que tu historia también termine con éxito?</h2>
+      <h2 class="text-5xl title-font mb-6">¿Quieres que tu negocio también tenga 8 años de ejecución brutal?</h2>
+      <p class="text-2xl text-zinc-400 mb-10">Ofrecemos mentorías de arquitectura de negocios, construcción de departamentos y procesos de alto control de calidad.</p>
       <a href="index.html" onclick="openArcanumChat()" 
-         class="inline-flex items-center gap-4 bg-[#D4A017] text-black text-2xl font-bold px-12 py-6 rounded-3xl hover:bg-white transition">
-        Hablar con Arcanum IA ahora <span class="text-4xl">→</span>
+         class="glow-border inline-flex items-center gap-4 text-black text-3xl font-bold px-16 py-8 rounded-3xl transition">
+        Reservar mentoría ahora <span class="text-4xl">→</span>
       </a>
+      <p class="text-sm text-zinc-400 mt-8">Cupos limitados – Solo para dueños serios que quieren escalar con procesos reales.</p>
     </div>
   </section>
 
