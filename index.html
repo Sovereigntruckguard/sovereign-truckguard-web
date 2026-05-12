@@ -155,114 +155,94 @@
     </div>
   </section>
 
-  <!-- SECCIÓN TECNOLOGÍA SOLYON -->
-  <section class="relative py-20 overflow-hidden bg-black min-h-screen flex items-center">
-    <video class="absolute inset-0 w-full h-full object-cover z-[-1] opacity-0" 
-           autoplay loop muted playsinline preload="auto">
-      <source src="assets/videos/solyon-lab-video.mp4" type="video/mp4">
-    </video>
+<!-- ==================== SECCIÓN ASEGURANZAS / COBERTURAS ==================== -->
+<section class="bg-[#0F2C22] py-20">
+  <div class="max-w-screen-2xl mx-auto px-8">
+    <div class="text-center mb-12">
+      <h2 class="title-font text-5xl font-bold text-white">Aseguranza para tus camiones</h2>
+      <p class="text-[#D4A017] text-2xl mt-3">Coberturas reales que protegen tu negocio y tu familia</p>
+    </div>
 
-    <div class="max-w-screen-2xl mx-auto px-8 relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="title-font text-5xl font-bold mb-3">Tecnología Solyon</h2>
-        <p class="text-3xl text-[#D4A017]">El cerebro que protege y hace crecer tu negocio</p>
-      </div>
-      <div class="max-w-3xl mx-auto text-center text-xl text-zinc-300 mb-16">
-        Desarrollamos tecnología propia en nuestro laboratorio de Medellín (Solyon Technologies S.A.S.), apoyado por Ruta N, el Distrito de Ciencia y Tecnología de Medellín, Toyota Mobility Foundation y reconocido por el Ministerio de Ciencias de Colombia.<br><br>
-        <span class="text-white">Arcanum IA + Nexus + herramientas exclusivas para el camionero latino.</span>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
-          <i class="fas fa-brain text-6xl text-[#D4A017] mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Arcanum IA</h3>
-          <p class="text-zinc-400">Cerebro central que cotiza, certifica y rescata en tiempo real.</p>
+    <!-- Grid de coberturas con scroll horizontal en móvil -->
+    <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
+      
+      <!-- 1. Vehículo -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/vehiculo.png" alt="Physical Damage" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">VEHÍCULO</span>
+          <h3 class="text-2xl font-bold mb-2">Physical Damage</h3>
+          <p class="text-zinc-400 text-sm mb-6">Cubre daños físicos a tu camión por colisiones, vandalismo, robo o eventos naturales.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
         </div>
-        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
-          <i class="fas fa-network-wired text-6xl text-[#D4A017] mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Nexus Orchestration</h3>
-          <p class="text-zinc-400">Conecta seguros, factoring, ELD, cargas y compliance en un solo ecosistema.</p>
+      </div>
+
+      <!-- 2. Carga -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/carga.png" alt="Motor Truck Cargo" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">CARGA</span>
+          <h3 class="text-2xl font-bold mb-2">Motor Truck Cargo</h3>
+          <p class="text-zinc-400 text-sm mb-6">Protección para la mercancía que transportas contra pérdida, daño o robo.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
         </div>
-        <div class="bg-[#0F2C22]/90 backdrop-blur-md p-8 rounded-3xl text-center border border-[#D4A017]/30">
-          <i class="fas fa-rocket text-6xl text-[#D4A017] mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-3">Licenciamiento B2B</h3>
-          <p class="text-zinc-400">Nuestra tecnología también está disponible para otras empresas del sector.</p>
+      </div>
+
+      <!-- 3. Trailer -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/trailer.png" alt="Trailer Interchange" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">TRAILER</span>
+          <h3 class="text-2xl font-bold mb-2">Trailer Interchange</h3>
+          <p class="text-zinc-400 text-sm mb-6">Protección para remolques que no te pertenecen pero están bajo tu cuidado.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
+        </div>
+      </div>
+
+      <!-- 4. Responsabilidad -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/responsabilidad.png" alt="General Liability" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">RESPONSABILIDAD</span>
+          <h3 class="text-2xl font-bold mb-2">General Liability</h3>
+          <p class="text-zinc-400 text-sm mb-6">Protege tu empresa ante reclamos por daños a terceros o lesiones.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
+        </div>
+      </div>
+
+      <!-- 5. Bobtail -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/bobtail.png" alt="Non-Trucking Liability" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">BOBTAIL</span>
+          <h3 class="text-2xl font-bold mb-2">Non-Trucking Liability</h3>
+          <p class="text-zinc-400 text-sm mb-6">Cobertura cuando manejas tu camión fuera del despacho, sin carga ni asignación activa.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
+        </div>
+      </div>
+
+      <!-- 6. Conductor -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+        <img src="assets/images/coberturas/conductor.png" alt="Workers’ Compensation" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">CONDUCTOR</span>
+          <h3 class="text-2xl font-bold mb-2">Workers’ Compensation</h3>
+          <p class="text-zinc-400 text-sm mb-6">Protección para ti y tu conductor en caso de lesiones laborales.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SECCIÓN 4: COBERTURAS (6 tarjetas completas) -->
-  <section id="seguros" class="py-20 bg-[#0F2C22]">
-    <div class="max-w-screen-2xl mx-auto px-8">
-      <div class="text-center mb-12">
-        <h2 class="title-font text-5xl font-bold mb-3">Aseguranza para tus camiones</h2>
-        <p class="text-3xl text-[#D4A017]">Coberturas reales que protegen tu negocio y tu familia</p>
-      </div>
-      <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/1015/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">VEHÍCULO</span>
-            <h3 class="text-xl font-semibold mb-2">Physical Damage</h3>
-            <p class="text-zinc-400 text-sm">Cubre daños físicos a tu camión por colisiones, vandalismo, robo o eventos naturales.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/201/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">CARGA</span>
-            <h3 class="text-xl font-semibold mb-2">Motor Truck Cargo</h3>
-            <p class="text-zinc-400 text-sm">Protección para la mercancía que transportas contra pérdida, daño o robo.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/301/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">TRAILER</span>
-            <h3 class="text-xl font-semibold mb-2">Trailer Interchange</h3>
-            <p class="text-zinc-400 text-sm">Protección para remolques que no te pertenecen pero están bajo tu cuidado.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/401/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">RESPONSABILIDAD</span>
-            <h3 class="text-xl font-semibold mb-2">General Liability</h3>
-            <p class="text-zinc-400 text-sm">Protege tu empresa ante reclamos por daños a terceros o lesiones.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/501/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">BOBTAIL</span>
-            <h3 class="text-xl font-semibold mb-2">Non-Trucking Liability</h3>
-            <p class="text-zinc-400 text-sm">Cobertura cuando manejas tu camión fuera del despacho, sin carga ni asignación activa.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-        <a href="#seguros" class="coverage-card block bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 hover:border-[#D4A017]">
-          <div class="h-40 bg-[url('https://picsum.photos/id/601/600/400')] bg-cover bg-center"></div>
-          <div class="p-6">
-            <span class="inline-block px-3 py-1 text-xs font-bold bg-[#D4A017] text-black rounded-full mb-3">CONDUCTOR</span>
-            <h3 class="text-xl font-semibold mb-2">Workers’ Compensation</h3>
-            <p class="text-zinc-400 text-sm">Protección para ti y tu conductor en caso de lesiones laborales.</p>
-            <span class="text-[#D4A017] text-sm flex items-center gap-1 mt-4">Saber más →</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="mt-16 text-center">
-        <button onclick="openArcanumChat()" class="glow-border bg-[#D4A017] text-white px-16 py-8 rounded-3xl font-bold text-4xl md:text-5xl flex items-center gap-4 mx-auto hover:scale-105 transition">
-          COTIZAR <i class="fas fa-arrow-right text-5xl"></i>
-        </button>
-        <p class="text-[#D4A017] mt-6 text-xl">Haz clic y Arcanum te dará la mejor cotización en segundos</p>
-      </div>
+    <!-- Botón grande COTIZAR -->
+    <div class="flex justify-center mt-8">
+      <a href="#" onclick="openArcanumChat()" 
+         class="glow-border inline-flex items-center justify-center text-white text-3xl font-bold px-20 py-8 rounded-3xl transition">
+        COTIZAR <span class="ml-4 text-4xl">→</span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+<!-- ==================== FIN SECCIÓN ASEGURANZAS ==================== -->
 
   <!-- SECCIÓN 5: LO QUE DICEN LOS PARCEROS -->
   <section class="py-20 bg-black">
