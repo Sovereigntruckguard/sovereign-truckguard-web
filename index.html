@@ -377,34 +377,37 @@
     </div>
   </section>
 
-  <!-- PODCAST -->
-  <section class="py-20 bg-black">
-    <div class="max-w-screen-2xl mx-auto px-8">
-      <div class="text-center mb-16">
-        <h2 class="title-font text-5xl font-bold mb-3">El Podcast del Parcero</h2>
-        <p class="text-3xl text-[#D4A017]">Historias reales, consejos prácticos y la voz del camionero latino</p>
-        <p class="text-[#D4A017] mt-3 flex items-center justify-center gap-2">
-          <i class="fab fa-youtube text-4xl"></i> Disponible solo en YouTube
-        </p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="tech-card bg-[#0F2C22] rounded-3xl overflow-hidden border border-[#D4A017]/30 p-6 flex flex-col">
-          <div class="flex-1">
-            <div class="flex items-center justify-between mb-6">
-              <span class="px-4 py-1 bg-red-600 text-white text-xs font-bold rounded-full">EPISODIO 01</span>
-              <span class="text-zinc-400 text-sm">38 min</span>
-            </div>
-            <h3 class="text-2xl font-semibold mb-3">Cómo bajar tu prima de seguro sin perder cobertura</h3>
-            <p class="text-zinc-400">Conversación con Luciel Torres (Texas) – 3 años con Sovereign TruckGuard</p>
-          </div>
-          <a href="#" target="_blank" class="mt-8 flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 rounded-2xl transition">
-            <i class="fab fa-youtube text-2xl"></i> VER EN YOUTUBE
-          </a>
-        </div>
-        <!-- Puedes agregar los otros episodios aquí si quieres -->
-      </div>
+<!-- ==================== SECCIÓN PODCAST ==================== -->
+<section class="bg-black py-20">
+  <div class="max-w-screen-2xl mx-auto px-8">
+    <div class="text-center mb-12">
+      <h2 class="title-font text-5xl font-bold text-white">El Podcast del Parcero</h2>
+      <p class="text-[#D4A017] text-2xl mt-3">Historias reales, consejos brutales y todo lo que nadie te cuenta del trucking latino</p>
     </div>
-  </section>
+
+    <!-- Embed de YouTube (responsive) -->
+    <div class="max-w-5xl mx-auto aspect-video rounded-3xl overflow-hidden border-4 border-[#D4A017]/30 shadow-2xl">
+      <iframe 
+        width="100%" 
+        height="100%" 
+        src="https://www.youtube.com/watch?v=hEE2c1PtiOU" 
+        title="Podcast Sovereign TruckGuard" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="flex justify-center mt-10">
+      <a href="https://www.youtube.com/@Elpodcastdelparcero" target="_blank" 
+         class="glow-border inline-flex items-center gap-3 text-white text-xl font-semibold px-10 py-5 rounded-3xl hover:bg-[#D4A017] hover:text-black transition">
+        <i class="fab fa-youtube"></i> 
+        Ver todos los episodios en YouTube
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ==================== FIN SECCIÓN PODCAST ==================== -->
 
   <!-- FOOTER -->
   <footer class="bg-black py-16 border-t border-[#D4A017]/30">
