@@ -156,18 +156,33 @@
   </section>
 
 <!-- ==================== SECCIÓN ASEGURANZAS / COBERTURAS ==================== -->
-<section class="bg-[#0F2C22] py-20">
+<section class="bg-[#0F2C22] py-20 border-t border-[#D4A017]/30">
   <div class="max-w-screen-2xl mx-auto px-8">
-    <div class="text-center mb-12">
-      <h2 class="title-font text-5xl font-bold text-white">Aseguranza para tus camiones</h2>
-      <p class="text-[#D4A017] text-2xl mt-3">Coberturas reales que protegen tu negocio y tu familia</p>
+    
+    <!-- Transición visual entre secciones -->
+    <div class="flex items-center gap-4 mb-12">
+      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent"></div>
+      <h2 class="title-font text-5xl font-bold text-white text-center px-8">Aseguranza para tus camiones</h2>
+      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#D4A017] to-transparent"></div>
     </div>
+    <p class="text-[#D4A017] text-2xl text-center -mt-6 mb-12">Coberturas reales que protegen tu negocio y tu familia</p>
 
-    <!-- Grid de coberturas con scroll horizontal en móvil -->
+    <!-- Grid de 7 coberturas con scroll horizontal -->
     <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
       
-      <!-- 1. Vehículo -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 1. Commercial Auto Liability (la más importante) -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
+        <img src="assets/images/coberturas/liability.jpg" alt="Commercial Auto Liability" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">LIABILITY</span>
+          <h3 class="text-2xl font-bold mb-2">Commercial Auto Liability</h3>
+          <p class="text-zinc-400 text-sm mb-6">La cobertura más importante. Protege tu empresa ante reclamos por daños a terceros y lesiones en accidentes mientras operas comercialmente.</p>
+          <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
+        </div>
+      </div>
+
+      <!-- 2. Vehículo -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/vehiculo.png" alt="Physical Damage" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">VEHÍCULO</span>
@@ -177,8 +192,8 @@
         </div>
       </div>
 
-      <!-- 2. Carga -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 3. Carga -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/carga.png" alt="Motor Truck Cargo" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">CARGA</span>
@@ -188,8 +203,8 @@
         </div>
       </div>
 
-      <!-- 3. Trailer -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 4. Trailer -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/trailer.png" alt="Trailer Interchange" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">TRAILER</span>
@@ -199,8 +214,8 @@
         </div>
       </div>
 
-      <!-- 4. Responsabilidad -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 5. Responsabilidad General -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/responsabilidad.png" alt="General Liability" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">RESPONSABILIDAD</span>
@@ -210,8 +225,8 @@
         </div>
       </div>
 
-      <!-- 5. Bobtail -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 6. Bobtail -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/bobtail.png" alt="Non-Trucking Liability" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">BOBTAIL</span>
@@ -221,8 +236,8 @@
         </div>
       </div>
 
-      <!-- 6. Conductor -->
-      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/10">
+      <!-- 7. Conductor -->
+      <div class="bg-[#111] rounded-3xl overflow-hidden min-w-[320px] snap-center border border-[#D4A017]/20 hover:border-[#D4A017] transition">
         <img src="assets/images/coberturas/conductor.png" alt="Workers’ Compensation" class="w-full h-52 object-cover">
         <div class="p-6">
           <span class="inline-block bg-[#D4A017] text-black text-xs font-bold px-4 py-1 rounded-full mb-3">CONDUCTOR</span>
@@ -231,10 +246,11 @@
           <a href="#" onclick="openArcanumChat()" class="text-[#D4A017] flex items-center gap-2 hover:gap-3 transition">Saber más <span class="text-xl">→</span></a>
         </div>
       </div>
+
     </div>
 
     <!-- Botón grande COTIZAR -->
-    <div class="flex justify-center mt-8">
+    <div class="flex justify-center mt-12">
       <a href="#" onclick="openArcanumChat()" 
          class="glow-border inline-flex items-center justify-center text-white text-3xl font-bold px-20 py-8 rounded-3xl transition">
         COTIZAR <span class="ml-4 text-4xl">→</span>
